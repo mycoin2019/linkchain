@@ -63,7 +63,7 @@ public:
 	tc::StorValue<std::set<tc::Hash>> propList{PKEYLIST};
 	tc::StorMap<Key<std::string>, tc::Address> rights{RKEY};
 	tc::StorValue<std::set<tc::Address>> memberList{CKEY};
-	std::set<std::string> RIGHTS {"validators","candidates","coefficient","pledge","pledgeOwner","consCommittee","blacklist"};
+	std::set<std::string> RIGHTS {"validators","candidates","coefficient","pledge","pledgeOwner","consCommittee","blacklist","default"};
 
 public:
 	void Init();
@@ -111,6 +111,7 @@ void Committee::Init() {
 	rights.set(inner_contract, "coefficient");
 	rights.set(inner_contract, "blacklist");
 	rights.set(inner_contract, "consCommittee");
+	rights.set(inner_contract, "default");
 
 	rights.set(pledge_contract, "pledge");
 	rights.set(account_admin, "pledgeOwner");

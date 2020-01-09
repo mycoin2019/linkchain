@@ -381,6 +381,18 @@ func deployOriginalContract(st *state.StateDB) ([]*types.Validator, error) {
 		return nil, fmt.Errorf("deploy ContractConsCommittee Contract error:%v", err)
 	}
 
+	if len(cc.MintageAdminCodes) == 0 {
+		fmt.Println("ContractMintageAdmin code nil!!!")
+	} else if err := initWasmContract(st, cfg.ContractMintageAdminAddr, cc.MintageAdminCodes, logger); err != nil {
+		return nil, fmt.Errorf("deploy ContractMintageAdmin Contract error:%v", err)
+	}
+
+	if len(cc.MintageWhitelistCodes) == 0 {
+		fmt.Println("ContractMintageWhitelist code nil!!!")
+	} else if err := initWasmContract(st, cfg.ContractMintageWhitelistAddr, cc.MintageWhitelistCodes, logger); err != nil {
+		return nil, fmt.Errorf("deploy ContractMintageWhitelist Contract error:%v", err)
+	}
+
 	if len(cc.BlacklistCode) == 0 {
 		fmt.Println("blacklist contract code nil!!!")
 	} else {

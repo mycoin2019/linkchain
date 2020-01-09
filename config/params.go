@@ -93,6 +93,10 @@ var (
 	ContractBlacklistAddr = common.BytesToAddress([]byte("Blacklist"))
 	//ContractConsCommitteeAddr = 0x00000000000000436f6e73436f6d6d6974746565
 	ContractConsCommitteeAddr = common.BytesToAddress([]byte("ConsCommittee"))
+	//ContractMintageAdminAddr = 0x00000000000000004d696e7461676541646d696e
+	ContractMintageAdminAddr = common.BytesToAddress([]byte("MintageAdmin"))
+	//ContractMintageWhitelistAddr = 0x000000004d696e7461676557686974656c697374
+	ContractMintageWhitelistAddr = common.BytesToAddress([]byte("MintageWhitelist"))
 )
 
 //InnerContracts indicates all of inner contracts above
